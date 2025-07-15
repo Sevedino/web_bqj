@@ -1,18 +1,47 @@
+/*:root {
+  --color-fondo: #121212;
+  --color-texto: #FFFFFF;
+  --color-primario: #FFD500;
+  --color-secundario: #8B0000;
+  --color-hover: #2a2a2a;
+  --color-subtexto: #cccccc;
+  --color-footer: #000000;
+  --color-footer-texto: #888888;
+}*/
+:root {
+  --color-fondo: #FAFAFA;
+  --color-fondo-alterno: #F0F2F5;
+  --color-fondo-caja: #FFFFFF;
+  --color-primario: #1D4ED8;
+  --color-secundario: #93C5FD;
+  --color-texto-principal: #111827;
+  --color-texto-suave: #374151;
+  --color-borde: #E5E7EB;
+  --color-hover: #DBEAFE;
+  --color-footer: #F3F4F6;
+  --color-footer-texto: #6B7280;
+  --color-boton: #2563EB;
+  --color-boton-hover: #1E40AF;
+  --color-acento: #FACC15;
+}
+
 /* FUENTES Y BASE */
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
-  background-color: #121212;
-  color: #FFFFFF;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
 }
 
 h1, h2 {
   font-family: 'Anton', sans-serif;
-  color: #FFD500;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
 }
 
 p {
   line-height: 1.6;
+  color: var(--color-texto-suave);
 }
 
 a {
@@ -29,15 +58,11 @@ a {
 
 /* HERO */
 .hero {
-  background-color: #8B0000; /* rojo más oscuro */
+  background-color: var(--color-primario);
   text-align: center;
   padding: 4rem 1rem;
 }
 
-.hero p {
-  color: #FFFFFF;
-  font-size: 1.1rem;
-}/* HERO CON LOGO */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -50,9 +75,15 @@ a {
   height: auto;
   margin-bottom: 1rem;
 }
+.hero-content h1{
+    color:#E5E7EB
+}
+.hero p {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+}
 
-
-/* EPISODIOS */
+/* LISTA DE EPISODIOS */
 #lista-episodios {
   display: flex;
   flex-direction: column;
@@ -64,15 +95,16 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  background-color: #1e1e1e;
-  border-left: 6px solid #FFD500;
+  background-color: var(--color-fondo-caja);
+  border-left: 6px solid var(--color-primario);
   border-radius: 8px;
   padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   transition: background-color 0.3s ease;
 }
 
 .episodio:hover {
-  background-color: #2a2a2a;
+  background-color: var(--color-hover);
 }
 
 .episodio img {
@@ -92,21 +124,21 @@ a {
 .episodio-detalles h2 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--color-texto-principal);
 }
 
 .episodio-detalles p {
   margin: 0.25rem 0;
-  color: #cccccc;
   font-size: 0.95rem;
 }
 
 /* FOOTER */
 .footer {
-  background-color: #000000;
+  background-color: var(--color-footer);
   padding: 2rem 1rem;
   text-align: center;
-  color: #888888;
+  color: var(--color-footer-texto);
   font-size: 0.9rem;
 }
 
@@ -124,5 +156,9 @@ a {
   .episodio-detalles {
     align-items: center;
     text-align: center;
+  }
+
+  .hero img.logo {
+    width: 80px;
   }
 }
