@@ -1,0 +1,209 @@
+/* FUENTES BASE */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: #FFFFFF;
+}
+
+h1, h2 {
+  font-family: 'Anton', sans-serif;
+  color: #FFD500;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* CONTENEDORES */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+/* HERO CON LOGO */
+.hero {
+  background-color: #CC1B1B;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero img.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* SECCIONES GENERALES */
+.seccion {
+  padding: 4rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+/* EPISODIO DESTACADO */
+#episodio-destacado {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background-color: #1e1e1e;
+  border-left: 6px solid #FFD500;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+#episodio-destacado img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#episodio-destacado .detalle {
+  flex: 1;
+}
+
+#episodio-destacado h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+#episodio-destacado p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* LISTA DE EPISODIOS (usada en episodios.html) */
+#lista-episodios {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.episodio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background-color: #1e1e1e;
+  border-left: 6px solid #FFD500;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.episodio:hover {
+  background-color: #2a2a2a;
+}
+
+.episodio img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.episodio-detalles {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.episodio-detalles h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.episodio-detalles p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* BOTONES */
+.boton-donar,
+.boton-ver-todos {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: #FFD500;
+  color: #121212;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.boton-donar:hover,
+.boton-ver-todos:hover {
+  background-color: #CC1B1B;
+  color: #FFFFFF;
+}
+
+/* REDES SOCIALES */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  background-color: #FFD500;
+  color: #121212;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #CC1B1B;
+  color: #FFFFFF;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #000000;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  #episodio-destacado,
+  .episodio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #episodio-destacado img,
+  .episodio img {
+    max-width: 100%;
+  }
+
+  .hero img.logo {
+    width: 80px;
+  }
+
+  .episodio-detalles {
+    text-align: center;
+    align-items: center;
+  }
+}
