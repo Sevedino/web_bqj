@@ -1,14 +1,17 @@
+import os
 import requests
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # === CONFIGURACIÓN ===
-API_KEY = 'AIzaSyCw_1sPnWIHqNn7Qpu2Ht2vEdegoB2ABsk'  # ← reemplaza con tu API Key de YouTube Data API v3
+API_KEY = os.getenv("API_KEY")
 PLAYLIST_ID = 'PLgSG7f4hM1f7J4JexzXxjmw223x5WBg8L'
-MAX_RESULTS = 20  # puedes ajustarlo
+MAX_RESULTS = 20
 
-# === FUNCIÓN PARA OBTENER EPISODIOS ===
 def obtener_videos():
-    url = f"https://www.googleapis.com/youtube/v3/playlistItems"
+    url = "https://www.googleapis.com/youtube/v3/playlistItems"
     params = {
         "part": "snippet",
         "playlistId": PLAYLIST_ID,
@@ -33,12 +36,10 @@ def obtener_videos():
 
     return episodios
 
-# === GUARDAR COMO JSON ===
 def guardar_json(episodios):
     with open("episodios.json", "w", encoding="utf-8") as f:
         json.dump(episodios, f, ensure_ascii=False, indent=2)
 
-# === EJECUCIÓN ===
 if __name__ == "__main__":
     episodios = obtener_videos()
     guardar_json(episodios)
