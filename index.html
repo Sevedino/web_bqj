@@ -3,74 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Podcast Oficial</title>
+  <title>Entre Fotos Podcast</title>
   <link rel="stylesheet" href="estilos.css" />
   <link rel="icon" href="icon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <!-- HERO -->
 <header class="hero">
-  <div class="container hero-content">
+  <div class="container hero-inner">
     <img src="logo.png" alt="Logo del Podcast" class="logo">
-    <div>
-      <h1>La otra foto</h1>
-      <p>Política, seriedad y humor. Un episodio a la vez.</p>
+    <div class="hero-text">
+      <h1>Entre Fotos</h1>
+      <p>Conversaciones serias y no tan serias sobre política, cultura y actualidad.</p>
+      <a href="https://www.paypal.com" class="btn btn-primary" target="_blank">Apóyanos</a>
     </div>
   </div>
 </header>
 
+<!-- BANNER -->
+<section class="banner">
+  <img src="banner1.png" alt="Banner Promocional" class="banner-img">
+</section>
+
 <!-- SOBRE EL PODCAST -->
-<section id="sobre" class="seccion">
+<section class="seccion seccion-light">
   <div class="container">
     <h2>Sobre el Podcast</h2>
-    <p>
-      Este podcast nace para explorar temas actuales con una mirada crítica y sin censura.
-      Aquí discutimos cultura pop, sociedad, tecnología y lo que se nos ocurra.
-      Con invitados, humor y mucha opinión.
-    </p>
+    <p>Una mirada auténtica, divertida y sin filtros sobre los temas que marcan nuestra vida. Invitados, actualidad y humor, en un solo lugar.</p>
   </div>
 </section>
 
 <!-- ÚLTIMO EPISODIO -->
-<section id="ultimo-episodio" class="seccion">
+<section class="seccion seccion-dark">
   <div class="container">
     <h2>Último Episodio</h2>
-    <div id="episodio-destacado"></div>
-    <a href="episodios.html" class="boton-ver-todos">Ver todos los episodios</a>
-  </div>
-</section>
-
-<!-- REDES SOCIALES -->
-<section id="redes" class="seccion">
-  <div class="container">
-    <h2>Síguenos</h2>
-    <div class="social-links">
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
-      <a href="https://www.youtube.com/" target="_blank">YouTube</a>
-      <a href="https://twitter.com/" target="_blank">X (Twitter)</a>
-      <a href="https://open.spotify.com/" target="_blank">Spotify</a>
+    <div id="episodio-destacado" class="video-card">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed?list=PLTuEjDb7WqkX9muHqLgXuDxZ7bNUIJ_SJ" title="Último episodio" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="episodios.html" class="btn btn-secondary">Ver todos los episodios</a>
     </div>
   </div>
 </section>
 
-<!-- APOYO -->
-<section id="apoyo" class="seccion">
+<!-- SÍGUENOS -->
+<section class="seccion seccion-light">
   <div class="container">
-    <h2>Apoya el Podcast</h2>
-    <p>¿Te gusta lo que hacemos? Puedes ayudarnos con una donación:</p>
-    <a href="https://www.paypal.com" target="_blank" class="boton-donar">Donar vía PayPal</a>
+    <h2>Síguenos</h2>
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/entrefotos_podcast/" target="_blank" class="btn btn-secondary">Instagram</a>
+      <a href="https://www.tiktok.com/@entre.fotos" target="_blank" class="btn btn-secondary">TikTok</a>
+      <a href="https://www.youtube.com/@EntreFotosPodcast" target="_blank" class="btn btn-secondary">YouTube</a>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2025 El Podcast Oficial. Todos los derechos reservados.</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/entrefotos_podcast/" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://www.youtube.com/@EntreFotosPodcast" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+      <a href="https://www.tiktok.com/@entre.fotos" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+    </div>
+    <p>&copy; 2025 Entre Fotos Podcast. Todos los derechos reservados.</p>
   </div>
 </footer>
 
-<script src="main.js"></script>
 </body>
 </html>

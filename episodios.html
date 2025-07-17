@@ -2,39 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Episodios del Podcast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Episodios | Entre Fotos</title>
+  <link rel="stylesheet" href="episodios.css" />
   <link rel="icon" href="icon.ico" />
-  <link rel="stylesheet" href="episodios.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Anton&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-<!-- HERO CON LOGO -->
+<!-- HERO -->
 <header class="hero">
-  <div class="container hero-content">
-    <img src="logo.png" alt="Logo del Podcast" class="logo">
-    <div>
-      <h1>Episodios del Podcast</h1>
-      <p>Explora todos nuestros capítulos con sus invitados y descripciones completas.</p>
+  <div class="hero-inner container">
+    <img src="logo.png" alt="Logo Entre Fotos" class="logo" />
+    <div class="hero-text">
+      <h1 class="text-white">Todos los Episodios</h1>
+      <p class="text-white">Explora nuestra colección completa.</p>
     </div>
   </div>
 </header>
 
+<!-- BANNER -->
+<section class="banner">
+  <img src="banner2.png" alt="Banner" class="banner-img" />
+</section>
+
 <!-- LISTA DE EPISODIOS -->
-<main class="container">
-  <section id="lista-episodios">
-    <!-- Aquí se insertarán dinámicamente los episodios desde episodios.json -->
-  </section>
-</main>
+<section class="seccion seccion-light">
+  <div class="container">
+    <h2 class="text-primary">Episodios Anteriores</h2>
+    <div id="lista-episodios">
+      <!-- Episodios se cargarán dinámicamente vía JS -->
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 El Podcast Oficial. Todos los derechos reservados.</p>
+  <div class="footer-social">
+    <a href="https://www.youtube.com/@EntreFotosPodcast" target="_blank">
+      <img src="youtube.png" alt="YouTube" />
+    </a>
+    <a href="https://www.instagram.com/entrefotos_podcast/" target="_blank">
+      <img src="instagram.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@entre.fotos" target="_blank">
+      <img src="tiktok.png" alt="TikTok" />
+    </a>
   </div>
+  <p>&copy; 2025 Entre Fotos. Todos los derechos reservados.</p>
 </footer>
 
-<script src="episodios.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

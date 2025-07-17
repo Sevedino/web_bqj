@@ -1,249 +1,160 @@
-/*:root {
-  --color-fondo: #121212;
-  --color-texto: #FFFFFF;
-  --color-primario: #FFD500;
-  --color-secundario: #CC1B1B;
-  --color-hover: #2a2a2a;
-  --color-footer: #000000;
-  --color-subtexto: #cccccc;
-  --color-borde-seccion: #333;
-  --color-footer-texto: #888888;
-}*/
-/* PALETA BASE */
 :root {
-  --color-fondo: #FAFAFA;
-  --color-fondo-alterno: #F0F2F5;
-  --color-fondo-caja: #FFFFFF;
-  --color-primario: #1D4ED8;
-  --color-secundario: #93C5FD;
-  --color-texto-principal: #111827;
-  --color-texto-suave: #374151;
-  --color-borde: #E5E7EB;
-  --color-hover: #DBEAFE;
-  --color-footer: #F3F4F6;
-  --color-footer-texto: #6B7280;
-  --color-boton: #2563EB;
-  --color-boton-hover: #1E40AF;
-  --color-acento: #FACC15;
+  --color-primario:   #4623E2;   /* Morado */
+  --color-acento:     #FF7ED2;   /* Fucsia */
+  --color-fondo:      #FFFFFF;   /* Blanco */
+  --color-fondo-alt:  #FF68CF;   /* Rosa suave */
+  --color-texto-claro: #FFFFFF;  /* Para fondos oscuros */
+  --color-texto-oscuro: #111827; /* Para fondos claros */
+  --color-hover:      #3D2EC9;   /* Morado más oscuro */
 }
 
+/* Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background-color: var(--color-fondo);
-  color: var(--color-texto-principal);
-}
-
-h1, h2 {
-  font-family: 'Anton', sans-serif;
-  color: var(--color-primario);
-  margin-bottom: 1rem;
-}
-
-p {
+  font-family: 'Open Sans', sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto-oscuro);
   line-height: 1.6;
-  color: var(--color-texto-suave);
 }
+a { text-decoration: none; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* Container */
+.container { max-width: 1200px; margin: auto; padding: 2rem 1rem; }
+.text-center { text-align: center; }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-
-/* HERO */
-.hero {
-  background-color: var(--color-primario);
-  color: white;
-  padding: 4rem 1rem;
+/* Botones */
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  border-radius: 30px;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.3s, color 0.3s, border 0.3s;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
 }
-.hero-content p {
-  color: white; /* Solo este párrafo será blanco */
+.btn-primary {
+  background: var(--color-acento);
+  color: var(--color-texto-claro);
 }
-.hero-content h1{
-    color:#E5E7EB
+.btn-primary:hover {
+  background: var(--color-hover);
+  color: var(--color-texto-claro);
 }
-.hero-content {
+
+.btn-secondary {
+  background: var(--color-fondo);
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+}
+.btn-secondary:hover {
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+}
+
+/* Secciones */
+.seccion { padding: 4rem 1rem; }
+.seccion-light { background: var(--color-fondo); }
+.seccion-dark { background: var(--color-fondo-alt); }
+
+/* Hero */
+.hero {
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 150%; height: 150%;
+  background: var(--color-acento); opacity: 0.15;
+  top: -25%; left: -25%;
+  transform: rotate(45deg);
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
+}
+.logo { width: 120px; }
+.hero-text p { font-size: 1.1rem; }
+.hero-text .btn-primary {
+  margin-top: 2.5rem;
 }
 
-.hero img.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
+/* Banner */
+.banner {
+  text-align: center;
+  padding: 2rem 0;
+  background: var(--color-fondo-alt);
 }
-
-/* SECCIONES DIFERENCIADAS */
-.seccion {
-  padding: 4rem 1rem;
-}
-
-.seccion:nth-child(even) {
-  background-color: var(--color-fondo-alterno);
-}
-
-.seccion:nth-child(odd) {
-  background-color: var(--color-fondo);
-}
-
-/* EPISODIO DESTACADO */
-#episodio-destacado {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  background-color: var(--color-fondo-caja);
-  border-left: 6px solid var(--color-acento);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-#episodio-destacado img {
-  max-width: 320px;
+.banner-img {
   width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
 }
 
-#episodio-destacado .detalle {
-  flex: 1;
+/* Video Card */
+.video-card {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
 }
 
-#episodio-destacado h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-#episodio-destacado p {
-  font-size: 0.95rem;
-}
-
-/* LISTA DE EPISODIOS */
-#lista-episodios {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.episodio {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  background-color: var(--color-fondo-caja);
-  border-left: 6px solid var(--color-acento);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s ease;
-}
-
-.episodio:hover {
-  background-color: var(--color-hover);
-}
-
-.episodio img {
-  max-width: 320px;
-  width: 100%;
-  border-radius: 6px;
-}
-
-.episodio-detalles {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.episodio-detalles h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-texto-principal);
-}
-
-.episodio-detalles p {
-  font-size: 0.95rem;
-  color: var(--color-texto-suave);
-}
-
-/* BOTONES */
-.boton-donar,
-.boton-ver-todos {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background-color: var(--color-boton);
-  color: #fff;
-  padding: 0.75rem 2rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.boton-donar:hover,
-.boton-ver-todos:hover {
-  background-color: var(--color-boton-hover);
-}
-
-/* REDES SOCIALES */
-.social-links {
+/* Social Buttons estilo botón */
+.social-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
-.social-links a {
-  background-color: var(--color-boton);
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 100px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.social-links a:hover {
-  background-color: var(--color-boton-hover);
-}
-
-/* FOOTER */
+/* Footer */
 .footer {
-  background-color: var(--color-footer);
-  padding: 2rem 1rem;
+  background: var(--color-primario);
+  color: var(--color-texto-claro);
   text-align: center;
-  color: var(--color-footer-texto);
+  padding: 2rem 1rem;
   font-size: 0.9rem;
 }
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-social a img {
+  width: 32px;
+  height: 32px;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  opacity: 0.9;
+}
+.footer-social a:hover img {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+}
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-  #episodio-destacado,
-  .episodio {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #episodio-destacado img,
-  .episodio img {
-    max-width: 100%;
-  }
-
-  .hero img.logo {
-    width: 80px;
-  }
-
-  .episodio-detalles {
-    text-align: center;
-    align-items: center;
-  }
+  .logo { width: 80px; }
+  .video-wrapper, .banner-img { max-width: 100%; }
 }
